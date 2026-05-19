@@ -1,0 +1,25 @@
+node_modules/
+dist/
+build/
+.next/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Misc
+.cache/
+init-plan.md

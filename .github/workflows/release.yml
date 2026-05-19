@@ -1,0 +1,17 @@
+name: Release
+
+# Stub workflow — Phase 8 will wire this up to build and push Docker images
+# and deploy via AWS CDK. Kept here so the directory structure is clear.
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: echo "Release pipeline is implemented in Phase 8."
