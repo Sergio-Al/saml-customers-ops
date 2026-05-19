@@ -4,6 +4,7 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import { JsonView, defaultStyles } from "react-json-view-lite";
 import "react-json-view-lite/dist/index.css";
 import { Tile, Badge } from "@ai-ops/ui";
+import { Activity } from "lucide-react";
 import type { BadgeProps } from "@ai-ops/ui";
 import { EventType } from "@ai-ops/shared-types";
 import type { EventType as EventTypeT } from "@ai-ops/shared-types";
@@ -83,6 +84,7 @@ export function EventTimelineTile({ index = 0 }: EventTimelineTileProps) {
       size="wide"
       index={index}
       title="Event Timeline"
+      icon={<Activity size={13} />}
       badge={<Badge tone="info">{filtered.length} live</Badge>}
     >
       <div className="flex h-full min-h-[260px] flex-col gap-2">

@@ -1,13 +1,14 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Sidebar, NavItem, RealtimeBadge } from "@ai-ops/ui";
+import { LayoutDashboard, Radio, GitFork, Settings } from "lucide-react";
 import { useTenant } from "@/stores/tenant.store";
 import { useEventStream } from "@/hooks/useEventStream";
 
 const NAV = [
-  { to: "/dashboard", label: "Dashboard" },
-  { to: "/events", label: "Events" },
-  { to: "/workflows", label: "Workflows" },
-  { to: "/settings", label: "Settings" },
+  { to: "/dashboard", label: "Dashboard", icon: <LayoutDashboard size={14} /> },
+  { to: "/events", label: "Events", icon: <Radio size={14} /> },
+  { to: "/workflows", label: "Workflows", icon: <GitFork size={14} /> },
+  { to: "/settings", label: "Settings", icon: <Settings size={14} /> },
 ];
 
 export function AppLayout() {
@@ -29,7 +30,7 @@ export function AppLayout() {
         <div className="flex flex-col gap-0.5">
           {NAV.map((item) => (
             <NavLink key={item.to} to={item.to} className="block">
-              {({ isActive }) => <NavItem label={item.label} active={isActive} />}
+              {({ isActive }) => <NavItem label={item.label} icon={item.icon} active={isActive} />}
             </NavLink>
           ))}
         </div>

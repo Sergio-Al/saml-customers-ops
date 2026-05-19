@@ -1,4 +1,5 @@
 import { Tile, Badge } from "@ai-ops/ui";
+import { GitMerge } from "lucide-react";
 
 interface Span {
   service: string;
@@ -33,6 +34,7 @@ export function TraceWaterfallTile({ index = 0 }: TraceWaterfallTileProps) {
       size="full"
       index={index}
       title="Distributed Trace"
+      icon={<GitMerge size={13} />}
       badge={<Badge tone="neutral">mock</Badge>}
       footer="trace-id: 9a3f2c10b8d54e7a • 7 spans • 248ms"
     >

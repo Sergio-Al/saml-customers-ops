@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Tile } from "@ai-ops/ui";
+import { BarChart2 } from "lucide-react";
 import { useEventsStore, selectEventCounts } from "@/stores/events.store";
 
 interface TopEventsTileProps {
@@ -19,7 +20,13 @@ export function TopEventsTile({ index = 0 }: TopEventsTileProps) {
   const max = top[0]?.[1] ?? 1;
 
   return (
-    <Tile size="md" index={index} title="Top Events" footer={`${events.length} total`}>
+    <Tile
+      size="md"
+      index={index}
+      title="Top Events"
+      icon={<BarChart2 size={13} />}
+      footer={`${events.length} total`}
+    >
       <div className="flex h-full min-h-0 flex-col gap-1 overflow-hidden">
         {top.length === 0 && (
           <div className="text-[12px] font-mono text-text-muted">no events yet</div>

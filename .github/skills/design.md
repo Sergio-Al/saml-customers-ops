@@ -240,6 +240,76 @@ Monospace should appear intentionally and sparingly.
 
 ---
 
+# Icons
+
+## Library
+
+**Lucide React** (`lucide-react`)
+
+The sole icon library for this platform.
+
+Why:
+
+- clean 1.5px stroke geometry — matches the platform's structured, precise aesthetic,
+- tree-shakeable (only imported icons are bundled),
+- TypeScript-first with full type support,
+- used by Linear, Vercel, and modern infrastructure tooling — consistent with the design direction.
+
+---
+
+## Usage Rules
+
+Icons are **functional signals**, not decoration.
+
+Use icons to:
+
+- identify navigation destinations in the sidebar,
+- label tile headers to distinguish content type at a glance,
+- communicate state changes in operational indicators.
+
+Never use icons:
+
+- as decorative fills,
+- alongside text that already communicates the same information redundantly,
+- at sizes above 16px in dense operational surfaces.
+
+---
+
+## Size Scale
+
+| Context             | Size |
+| ------------------- | ---- |
+| Tile header         | 13px |
+| Sidebar nav item    | 14px |
+| Inline state dot    | 12px |
+| Action button label | 14px |
+
+---
+
+## Stroke & Color
+
+- Stroke width: `1.5` (Lucide default — do not override)
+- Color: inherit from parent text color (`text-text-tertiary` in tile headers, `text-text-secondary` in nav)
+- Never apply operational state colors (`ai`, `event`, `error`, etc.) to icons directly — use badges or dots for state
+
+---
+
+## Canonical Icon Map
+
+| Surface             | Icon              | Lucide name       |
+| ------------------- | ----------------- | ----------------- |
+| Dashboard nav       | Grid layout       | `LayoutDashboard` |
+| Events nav          | Live signal       | `Radio`           |
+| Workflows nav       | Branch graph      | `GitFork`         |
+| Settings nav        | Gear              | `Settings`        |
+| Event Timeline tile | Activity waveform | `Activity`        |
+| AI Status tile      | Agent bot         | `Bot`             |
+| Workflow Graph tile | Fork              | `GitFork`         |
+| Top Events tile     | Bar chart         | `BarChart2`       |
+| Distributed Trace   | Merge graph       | `GitMerge`        |
+
+---
+
 # Typography Hierarchy
 
 | Token                      | Size | Weight | Tracking | Usage                    |
