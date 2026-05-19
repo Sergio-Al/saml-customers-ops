@@ -5,9 +5,10 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function Card({ className = "", children, ...rest }: CardProps) {
-  const classes = ["rounded-lg border border-slate-200 bg-white p-4 shadow-sm", className].join(
-    " ",
-  );
+  const classes = [
+    "rounded-[10px] border border-border-op bg-panel p-4 text-text-primary",
+    className,
+  ].join(" ");
 
   return (
     <div className={classes} {...rest}>

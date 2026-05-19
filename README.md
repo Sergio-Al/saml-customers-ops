@@ -71,7 +71,7 @@ pnpm lint
 See `init-plan.md` for the full roadmap.
 
 - [x] **Phase 1** — Foundation & Architecture
-- [ ] **Phase 2** — Frontend Platform Shell
+- [x] **Phase 2** — Frontend Platform Shell
 - [ ] **Phase 3** — Authentication & Multi-Tenancy
 - [ ] **Phase 4** — Event-Driven Core
 - [ ] **Phase 5** — AI Agent Platform

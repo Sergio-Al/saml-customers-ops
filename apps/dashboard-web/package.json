@@ -1,0 +1,41 @@
+{
+  "name": "@ai-ops/dashboard-web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --max-warnings=0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-ops/event-sdk": "workspace:*",
+    "@ai-ops/observability-sdk": "workspace:*",
+    "@ai-ops/shared-types": "workspace:*",
+    "@ai-ops/ui": "workspace:*",
+    "@tanstack/react-query": "^5.40.0",
+    "@tanstack/react-table": "^8.17.3",
+    "@tanstack/react-virtual": "^3.5.0",
+    "@xyflow/react": "^12.0.0",
+    "cmdk": "^1.0.0",
+    "framer-motion": "^11.2.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-json-view-lite": "^1.4.0",
+    "react-router-dom": "^6.23.1",
+    "recharts": "^2.12.7",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
