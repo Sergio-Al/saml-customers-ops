@@ -1,0 +1,55 @@
+// Prisma schema — tenant-service
+// Owns: Tenant, TenantMembership
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/tenant-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TenantPlan {
+  free
+  starter
+  growth
+  enterprise
+}
+
+enum MembershipRole {
+  owner
+  admin
+  operator
+  analyst
+}
+
+model Tenant {
+  id        String     @id @default(uuid())
+  slug      String     @unique
+  name      String
+  plan      TenantPlan @default(free)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  memberships TenantMembership[]
+
+  @@map("tenants")
+}
+
+model TenantMembership {
+  id        String         @id @default(uuid())
+  userId    String
+  tenantId  String
+  role      MembershipRole
+  email     String?
+  createdAt DateTime       @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, tenantId])
+  @@index([userId])
+  @@index([tenantId])
+  @@map("tenant_memberships")
+}

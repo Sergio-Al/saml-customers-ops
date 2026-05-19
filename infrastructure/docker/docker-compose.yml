@@ -2,7 +2,7 @@ name: ai-ops-platform
 
 services:
   postgres:
-    image: pgvector/pgvector:pg16
+    image: pgvector/pgvector:0.8.2-pg16
     container_name: ai-ops-postgres
     restart: unless-stopped
     environment:

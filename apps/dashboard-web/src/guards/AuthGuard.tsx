@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/stores/auth.store";
 
 interface AuthGuardProps {
@@ -6,8 +7,10 @@ interface AuthGuardProps {
 }
 
 export function AuthGuard({ children }: AuthGuardProps) {
-  const user = useAuth((s) => s.user);
-  // Phase 2 stub: always render. Phase 3 will redirect to /login when null.
-  void user;
+  const token = useAuth((s) => s.token);
+  const location = useLocation();
+  if (!token) {
+    return <Navigate to="/login" replace state={{ from: location.pathname }} />;
+  }
   return <>{children}</>;
 }

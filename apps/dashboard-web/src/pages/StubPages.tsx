@@ -22,11 +22,3 @@ export function WorkflowsPage(): ReactNode {
 export function SettingsPage(): ReactNode {
   return <Placeholder phase="Phase 3 — Tenant & RBAC" title="Settings" />;
 }
-
-export function LoginPage(): ReactNode {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-canvas">
-      <Placeholder phase="Phase 3 — Authentication" title="Sign in" />
-    </div>
-  );
-}

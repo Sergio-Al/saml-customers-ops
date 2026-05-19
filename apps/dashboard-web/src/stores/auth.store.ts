@@ -8,20 +8,29 @@ export interface AuthUser {
   email: string;
 }
 
-interface AuthState {
-  user: AuthUser | null;
+export interface AuthSnapshot {
+  user: AuthUser;
+  token: string;
   tenantId: string;
   role: UserRole;
+}
+
+interface AuthState {
+  user: AuthUser | null;
+  token: string | null;
+  tenantId: string | null;
+  role: UserRole | null;
   setUser: (user: AuthUser | null) => void;
+  setAuth: (snapshot: AuthSnapshot) => void;
+  logout: () => void;
 }
 
 export const useAuth = create<AuthState>((set) => ({
-  user: {
-    id: "demo-user-1",
-    name: "Demo Operator",
-    email: "demo@ai-ops.local",
-  },
-  tenantId: "tenant-acme",
-  role: "operator",
+  user: null,
+  token: null,
+  tenantId: null,
+  role: null,
   setUser: (user) => set({ user }),
+  setAuth: ({ user, token, tenantId, role }) => set({ user, token, tenantId, role }),
+  logout: () => set({ user: null, token: null, tenantId: null, role: null }),
 }));

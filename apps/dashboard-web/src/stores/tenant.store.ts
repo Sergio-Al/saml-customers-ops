@@ -6,16 +6,7 @@ interface TenantState {
   setTenant: (tenant: Tenant | null) => void;
 }
 
-const DEMO_TENANT: Tenant = {
-  id: "tenant-acme",
-  slug: "acme",
-  name: "Acme Corp",
-  plan: "growth",
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString(),
-};
-
 export const useTenant = create<TenantState>((set) => ({
-  activeTenant: DEMO_TENANT,
+  activeTenant: null,
   setTenant: (tenant) => set({ activeTenant: tenant }),
 }));

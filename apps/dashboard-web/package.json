@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@ai-ops/auth-sdk": "workspace:*",
     "@ai-ops/event-sdk": "workspace:*",
     "@ai-ops/observability-sdk": "workspace:*",
     "@ai-ops/shared-types": "workspace:*",
