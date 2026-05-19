@@ -9,6 +9,7 @@ export default [
   {
     ignores: [
       "**/dist/**",
+      "**/dist-cjs/**",
       "**/build/**",
       "**/node_modules/**",
       "**/.turbo/**",
